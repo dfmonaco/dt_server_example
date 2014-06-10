@@ -1,4 +1,4 @@
-<table id='table'>
+<table id='table' data-source="<%= datatables_url(format: 'json')%>" >
   <thead>
     <tr>
       <th>Rendering Engine</th>
@@ -10,14 +10,14 @@
   </thead>
 
   <tbody>
-    <% @data.each do |data| %>
-      <tr>
-        <td><%= data.engine %></td>
-        <td><%= data.browser %></td>
-        <td><%= data.platform %></td>
-        <td><%= data.version %></td>
-        <td><%= data.grade %></td>
-      </tr>
-    <% end %>
+    <%# <% @data.each do |data| %1> %>
+    <%#   <tr> %>
+    <%#     <td><%= data.engine %1></td> %>
+    <%#     <td><%= data.browser %1></td> %>
+    <%#     <td><%= data.platform %1></td> %>
+    <%#     <td><%= data.version %1></td> %>
+    <%#     <td><%= data.grade %1></td> %>
+    <%#   </tr> %>
+    <%# <% end %1> %>
   </tbody>
 <table/>

@@ -16,6 +16,16 @@
 //= require dataTables/jquery.dataTables
 //= require_tree .
 //
+
+// $(document).ready(function() {
+//   $('#table').dataTable();
+// } );
+
 $(document).ready(function() {
-  $('#table').dataTable();
+  $('#table').dataTable( {
+    "bProcessing": true,
+    "bServerSide": true,
+    "sAjaxSource": $('#table').data('source')
+  } );
 } );
+
