@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140610184742) do
 
-  create_table "datatables", force: true do |t|
+  create_table "browsers", force: true do |t|
     t.string  "engine"
     t.string  "browser"
     t.string  "platform"

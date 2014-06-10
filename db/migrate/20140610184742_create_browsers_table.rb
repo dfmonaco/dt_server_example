@@ -1,6 +1,6 @@
-class CreateDatatablesTable < ActiveRecord::Migration
+class CreateBrowsersTable < ActiveRecord::Migration
   def up
-    create_table :datatables do |t|
+    create_table :browsers do |t|
       t.string :engine
       t.string :browser
       t.string :platform
@@ -10,7 +10,7 @@ class CreateDatatablesTable < ActiveRecord::Migration
 
     execute <<-SQL
      INSERT
-        INTO datatables ( engine, browser, platform, version, grade )
+        INTO browsers ( engine, browser, platform, version, grade )
         VALUES ( 'Trident', 'Internet Explorer 4.0', 'Win 95+', '4', 'X' )
              , ( 'Trident', 'Internet Explorer 5.0', 'Win 95+', '5', 'C' )
              , ( 'Trident', 'Internet Explorer 5.5', 'Win 95+', '5.5', 'A' )
