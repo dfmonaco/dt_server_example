@@ -1,0 +1,23 @@
+<table id='table'>
+  <thead>
+    <tr>
+      <th>Rendering Engine</th>
+      <th>Browser</th>
+      <th>Platforms</th>
+      <th>Engine version</th>
+      <th>CSS grade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data.each do |data| %>
+      <tr>
+        <td><%= data.engine %></td>
+        <td><%= data.browser %></td>
+        <td><%= data.platform %></td>
+        <td><%= data.version %></td>
+        <td><%= data.grade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+<table/>
