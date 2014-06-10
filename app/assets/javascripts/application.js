@@ -22,10 +22,10 @@
 // } );
 
 $(document).ready(function() {
-  $('#table').dataTable( {
+  $('#browsers').dataTable( {
     "bProcessing": true,
     "bServerSide": true,
-    "sAjaxSource": $('#table').data('source')
+    "sAjaxSource": $('#browsers').data('source')
   } );
 } );
 
