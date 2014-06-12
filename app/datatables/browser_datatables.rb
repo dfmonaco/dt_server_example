@@ -17,6 +17,8 @@
 # params[:sSortDir_0]
 
 class BrowserDatatables
+
+
   def initialize(table, params)
     @table = table
     @params = params
@@ -29,6 +31,10 @@ class BrowserDatatables
       iTotalDisplayRecords: i_total_display_records,
       aaData: aa_data
     }
+  end
+
+  def columns
+    %w(engine browser platform version grade)
   end
 
   private
@@ -79,7 +85,7 @@ class BrowserDatatables
   end
 
   def sort_column
-    %w(engine browser platform version grade)[params[:iSortCol_0].to_i]
+    columns[params[:iSortCol_0].to_i]
   end
 
   def sort_direction
@@ -88,7 +94,12 @@ class BrowserDatatables
 
   def filtered_data
     # filter(table)
-    table
+    return table if params[:sSearch].empty?
+    table.where(conditions, search: "%#{params[:sSearch]}%")
+  end
+
+  def conditions
+    columns.join(' LIKE :search OR ') << ' LIKE :search'
   end
 
 end
