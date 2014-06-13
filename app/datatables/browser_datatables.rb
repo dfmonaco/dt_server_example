@@ -1,7 +1,4 @@
-class BrowserDatatables
-  include DatatablesServer
-
-  private
+class BrowserDatatables < DatatablesServer::Base
 
   def data
     Browser.all
