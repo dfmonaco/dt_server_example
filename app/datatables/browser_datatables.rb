@@ -3,8 +3,12 @@ class BrowserDatatables
 
   private
 
+  def data
+    Browser.all
+  end
+
   def columns
-    %w(engine browser platform version grade)
+    %w(browsers.engine browsers.browser browsers.platform browsers.version browsers.grade)
   end
 
 end

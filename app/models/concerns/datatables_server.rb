@@ -1,6 +1,5 @@
 module DatatablesServer
-  def initialize(table, params)
-    @table = table
+  def initialize(params)
     @params = params
   end
 
@@ -15,7 +14,6 @@ module DatatablesServer
 
   private
 
-  attr_reader :table
   attr_reader :params
 
   def s_echo
@@ -23,7 +21,7 @@ module DatatablesServer
   end
 
   def i_total_records
-    table.count
+    data.count
   end
 
   def i_total_display_records
@@ -32,9 +30,16 @@ module DatatablesServer
 
   def aa_data
     paginated_data.map do |datum|
-      columns.inject([]) do |array, column|
+      attributes.inject([]) do |array, column|
         array << datum.public_send(column)
       end
+    end
+  end
+
+  def attributes
+    # binding.pry
+    @attributes ||= columns.map do |column|
+      column.split('.').last
     end
   end
 
@@ -65,9 +70,9 @@ module DatatablesServer
   end
 
   def filtered_data
-    # filter(table)
-    return table if params[:sSearch].empty?
-    table.where(conditions, search: "%#{params[:sSearch]}%")
+    # filter(data)
+    return data if params[:sSearch].empty?
+    data.where(conditions, search: "%#{params[:sSearch]}%")
   end
 
   def conditions
