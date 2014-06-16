@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'jquery-datatables-rails'
 gem 'pry-debugger'
-gem 'datatables_server', path: File.expand_path('../datatables_server')
+gem 'datatables_server'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

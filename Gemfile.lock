@@ -1,8 +1,3 @@
-PATH
-  remote: /home/diego/stuff/code/datatables_server
-  specs:
-    datatables_server (0.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +38,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     columnize (0.8.9)
+    datatables_server (0.0.1)
     debugger (1.6.8)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -138,7 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  datatables_server!
+  datatables_server
   jbuilder (~> 2.0)
   jquery-datatables-rails
   jquery-rails
